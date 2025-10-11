@@ -1,9 +1,12 @@
 import styles from './ProjectsSection.module.css';
+import React, { useState } from 'react';
+
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 const projects = [
   {
     name: 'House Prices – Advanced Regression Techniques | Kaggle',
-    image: '/project1.jpg',
+    image: `${basePath}/project1.jpg`,
     desc: 'Score: 13.276 RMSLE (Leaderboard)',
     skills: [
       'Built an end-to-end regression pipeline with Scikit-learn, including KNN imputation, feature scaling, One-Hot Encoding, cyclical features, and log-target transformation.',
@@ -14,7 +17,7 @@ const projects = [
   },
   {
     name: 'Olist E-Commerce Data Analysis',
-    image: '/project2.jpg',
+    image: `${basePath}/project2.jpg`,
     desc: 'Predicted house sale prices using advanced regression pipelines.',
     skills: [
       'Cleaned and joined multi-table e-commerce data using pandas and SQLwith an OOP pipeline design.',
@@ -25,7 +28,7 @@ const projects = [
   },
   {
     name: 'Cyclistic Bike Share Case Study',
-    image: '/project3.jpg',
+    image: `${basePath}/project3.jpg`,
     desc: 'Analyzed e-commerce data to optimize operations and delivery',
     skills: [
       'Processed and analyzed 500k+ bike share trips using R, data.table, and ggplot2, improving data processing speed by 4× compared to standard methods.',
@@ -35,8 +38,6 @@ const projects = [
     link: 'https://github.com/',
   },
 ];
-
-import React, { useState } from 'react';
 
 export default function ProjectsSection() {
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, idx: null });

@@ -1,26 +1,28 @@
 import React from 'react';
 import styles from './CertificationsSection.module.css';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 const certifications = [
   {
     name: 'Machine Learning by Stanford University',
     date: '2021/07',
-    logo: '/stanford.png',
+    logo: `${basePath}/stanford.png`,
   },
   {
     name: 'Python Associate 2',
     date: '2025/06',
-    logo: '/pcap.png',
+    logo: `${basePath}/pcap.png`,
   },
   {
     name: 'ALX Data Analytics Certificate',
     date: '2025/07',
-    logo: '/alx.png',
+    logo: `${basePath}/alx.png`,
   },
   {
     name: 'ALX AI Career Essentials Certificate',
     date: '2025/03',
-    logo: '/alx.png',
+    logo: `${basePath}/alx.png`,
   },
 ];
 
