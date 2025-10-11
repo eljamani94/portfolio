@@ -1,0 +1,84 @@
+
+.menuBar {
+  background: #232325;
+  border-radius: 20px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.14);
+  margin: 0 auto 32px auto;
+  max-width: 700px;
+  width: 100%;
+}
+.menuBar ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+.menuBar li {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.downloadBtn {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.downloadBtn:hover {
+  background: #a084f6;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(160,132,246,0.15);
+}
+.menuBar li svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.menuBar li:hover, .menuBar li.active {
+  background: #a084f6;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(160,132,246,0.12);
+}
+.menuBar li.active {
+  background: #a084f6;
+  color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(160,132,246,0.25);
+}
+.menuBar li:hover, .menuBar li.active {
+  background: #5d7b80;
+  color: #fff;
+}
+.resumeBtn {
+  font-size: 1rem;
+  color: #fff;
+  background: #345256;
+  border-radius: 8px;
+  padding: 7px 14px 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.resumeBtn:hover {
+  background: #87a7ac;
+  color: #0D2C30;
+}

@@ -1,0 +1,171 @@
+.projects {
+  text-align: left;
+  color: #fff;
+}
+.heading {
+  color: #232321;
+  font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+.heading span {
+  color: #5d7b80;
+}
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.project {
+  background: #f2f1ec;
+  color: #232321;
+  border: none;
+  border-radius: 0;
+  padding: 22px 28px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  text-decoration: none;
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.project h3,
+.project p,
+.project ul,
+.project li,
+.project strong {
+  color: #232321 !important;
+}
+
+.project h3 {
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #232321;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
+.project p {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  color: #232321;
+  margin: 0 0 10px 0;
+}
+
+.project ul {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #222;
+  margin: 6px 0 0 16px;
+  padding: 0;
+}
+
+.project li {
+  font-size: 15px;
+  font-weight: 300;
+  color: #222;
+  margin-bottom: 2px;
+  font-style: italic;
+}
+
+.project strong {
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  color: #232321;
+  font-size: 15px;
+  text-transform: none;
+}
+
+
+.project:not(:last-child) {
+  margin-bottom: 0;
+  border-bottom: 2px solid #232321;
+  border-radius: 0;
+}
+
+.projectTooltip {
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+  background: #232321;
+  color: #fafaf7;
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  line-height: 1.1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.project:hover .projectTooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+.project:hover .projectTooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project:hover, .project:focus-visible {
+  background: #232321;
+  color: #f5f6ed;
+  border-color: #232321;
+}
+
+.project img {
+  filter: grayscale(100%);
+  border-radius: 10px;
+  transition: filter 0.2s;
+}
+
+.project:hover img {
+  filter: grayscale(0%);
+}
+
+.project * {
+  transition: color 0.2s;
+}
+
+.project:hover * {
+  color: #f5f6ed !important;
+}
+
+.projectImg {
+  width: 68px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 0;
+  background: #111;
+}
+.project h3 {
+  margin: 0 0 2px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.project p {
+  margin: 0;
+  color: #87a7ac;
+  font-size: 1rem;
+}

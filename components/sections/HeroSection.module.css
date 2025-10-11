@@ -1,0 +1,60 @@
+.hero {
+  text-align: left;
+  padding-bottom: 16px;
+}
+
+.aboutHeading {
+  color: #232321;
+  font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.title span {
+  color: #87a7ac;
+}
+.subtitle {
+  font-size: 1.3rem;
+  color: #5d7b80;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+.stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 18px;
+}
+.statNumber {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #345256;
+  display: block;
+}
+.statLabel {
+  font-size: 1rem;
+  color: #5d7b80;
+  display: block;
+  margin-top: 2px;
+}
+
+.body, .description {
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400; /* or 300 for lighter look */
+  font-size: 1.18rem;
+  color: #232321;
+  line-height: 1.7;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+  letter-spacing: 0.01em;
+}

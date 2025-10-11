@@ -1,0 +1,58 @@
+.mainContent {
+  margin-left: 320px;
+  flex: 1;
+  padding: 48px 48px 48px 48px;
+  background: #f2f1ec;
+  color: #333333;
+  min-height: 100vh;
+  transition: background 0.2s;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 0px;
+  font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+}
+
+
+.sectionWrapper {
+  opacity: 0;
+  transform: translateY(40px);
+  margin-top: 0;
+  margin-bottom: 48px;
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+
+.heading {
+  color: #000;
+  font-family: 'Anton', 'League Spartan', 'Impact', Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.bodyText {
+  color: #333;
+  font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.sectionWrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionWrapper.certifications,
+.sectionWrapper.skills,
+.sectionWrapper.about,
+.sectionWrapper.experience,
+.sectionWrapper.education,
+.sectionWrapper.projects {
+  border-top: 2px solid #e5e7eb;
+  padding-top: 0;
+}
+
+.sectionWrapper.certifications {
+  border-top: 2px solid #e5e7eb;
+  padding-top: 0;
+}
