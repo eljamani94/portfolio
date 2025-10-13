@@ -5,24 +5,24 @@ const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 const certifications = [
   {
-    name: 'Machine Learning by Stanford University',
-    date: '2021/07',
-    logo: `${basePath}/stanford.png`,
-  },
-  {
-    name: 'Python Associate 2',
-    date: '2025/06',
-    logo: `${basePath}/pcap.png`,
-  },
-  {
     name: 'ALX Data Analytics Certificate',
-    date: '2025/07',
+    date: '2025/09',
     logo: `${basePath}/alx.png`,
   },
   {
     name: 'ALX AI Career Essentials Certificate',
-    date: '2025/03',
+    date: '2025/05',
     logo: `${basePath}/alx.png`,
+  },
+    {
+    name: 'Python Associate 2',
+    date: '2025/03',
+    logo: `${basePath}/pcap.png`,
+  },
+  {
+    name: 'Machine Learning by Stanford University',
+    date: '2021/07',
+    logo: `${basePath}/stanford.png`,
   },
 ];
 
