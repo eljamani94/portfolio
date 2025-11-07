@@ -1,0 +1,153 @@
+.educationSection {
+  max-width: 100%;
+  margin: 0;
+  color: #87a7ac;
+  padding: 0;
+  width: 100%;
+}
+
+.heading {
+  color: #232321;
+  font-family: 'Impact', 'Arial Black', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.educationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.timelineRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+  min-height: 44px;
+  background: none;
+}
+.timelineYear {
+  min-width: 150px;
+  font-size: 0.9rem;
+  color: #232321;
+  font-weight: 500;
+  text-align: right;
+  margin-top: 2px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.timelineLine {
+  width: 2px;
+  background: #e0e0e0;
+  min-height: 38px;
+  margin: 0 12px 0 0;
+  align-self: stretch;
+}
+.timelineContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.timelineSchool {
+  font-size: 1.08rem;
+  color: #232321;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.timelineDegree {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0px;
+}
+
+.school {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+.degree {
+  font-size: 15px;
+  color: #444;
+}
+
+.years {
+  color: #6b7280;
+  font-size: 14px;
+  margin-left: 18px;
+  white-space: nowrap;
+}
+
+.country {
+  color: #b5b5b5;
+  font-size: 13px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.diploma {
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #1a2324;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timelineRow {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .timelineYear {
+    min-width: auto;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-top: 0;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .timelineSchool {
+    font-size: 1rem;
+  }
+
+  .timelineDegree {
+    font-size: 0.95rem;
+  }
+
+  .school {
+    font-size: 15px;
+  }
+
+  .degree {
+    font-size: 14px;
+  }
+
+  .years {
+    font-size: 13px;
+    margin-left: 0;
+  }
+
+  .country {
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .diploma {
+    height: 150px;
+  }
+}
