@@ -34,12 +34,14 @@
 }
 
 .timelineYear {
-  min-width: 44px;
-  font-size: 1.05rem;
+  min-width: 150px;
+  font-size: 0.9rem;
   color: #232321;
   font-weight: 500;
   text-align: right;
   margin-top: 2px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
 }
 
 .timelineLine {

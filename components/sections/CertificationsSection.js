@@ -28,6 +28,16 @@ const certifications = [
     logo: `${basePath}/stanford.png`,
     link: 'https://www.coursera.org/account/accomplishments/verify/MCKWATV3Q8XA',
   },
+    {
+    name: 'Python Associate 2',
+    date: '2025/03',
+    logo: `${basePath}/pcap.png`,
+  },
+  {
+    name: 'Machine Learning by Stanford University',
+    date: '2021/07',
+    logo: `${basePath}/stanford.png`,
+  },
 ];
 
 export default function CertificationsSection() {
