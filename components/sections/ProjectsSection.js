@@ -1,5 +1,4 @@
 import styles from './ProjectsSection.module.css';
-import React, { useState } from 'react';
 
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
@@ -51,12 +50,10 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
-  const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0, idx: null });
-
   return (
     <div className={styles.projects}>
       <h2 className={styles.heading}>Recent Projects</h2>
-      <div className={styles.projectList}>
+      <div className={styles.projectGrid}>
         {projects.map((proj, idx) => (
           <a
             key={proj.name}
@@ -64,29 +61,23 @@ export default function ProjectsSection() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.project}
-            onMouseMove={e => setTooltip({ visible: true, x: e.clientX, y: e.clientY, idx })}
-            onMouseLeave={() => setTooltip({ ...tooltip, visible: false })}
-            onMouseEnter={e => setTooltip({ visible: true, x: e.clientX, y: e.clientY, idx })}
           >
-            <div style={{ flex: 1 }}>
-              <h3>{proj.name}</h3>
-              <p style={{ marginBottom: 10 }}>{proj.desc}</p>
-              <div style={{ marginBottom: 8 }}>
-                <strong>Description:</strong>
-                <ul style={{ margin: '6px 0 0 16px', padding: 0 }}>
-                  {proj.skills.map((skill) => (
-                    <li key={skill} style={{ fontSize: 14, color: '#5d7b80', marginBottom: 2 }}>{skill}</li>
-                  ))}
-                </ul>
-              </div>
+            <div className={styles.projectImageWrapper}>
+              <img
+                src={proj.image}
+                alt={proj.name}
+                className={styles.projectImg}
+              />
             </div>
-            <img
-              src={proj.image}
-              alt={proj.name}
-              className={styles.projectImg}
-              style={{ width: 170, height: 120, objectFit: 'cover', borderRadius: 12 }}
-            />
-            <span className={styles.projectTooltip}>Click for more details</span>
+            <div className={styles.projectContent}>
+              <h3>{proj.name}</h3>
+              <p className={styles.projectDesc}>{proj.desc}</p>
+              <ul className={styles.projectSkills}>
+                {proj.skills.map((skill, skillIdx) => (
+                  <li key={skillIdx}>{skill}</li>
+                ))}
+              </ul>
+            </div>
           </a>
         ))}
       </div>

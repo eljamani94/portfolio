@@ -2,23 +2,26 @@
   text-align: left;
   color: #fff;
 }
+
 .heading {
   color: #232321;
   font-family: 'Impact', 'Arial Black', Arial, sans-serif;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-top: 0;
   text-transform: uppercase;
 }
+
 .heading span {
   color: #5d7b80;
 }
-.projectList {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
   margin: 0;
   padding: 0;
 }
@@ -26,186 +29,156 @@
 .project {
   background: #f2f1ec;
   color: #232321;
-  border: none;
-  border-radius: 0;
-  padding: 22px 28px;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  gap: 32px;
+  border-radius: 16px;
+  padding: 0;
   text-decoration: none;
   font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
-  font-size: 1.1rem;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.project h3,
-.project p,
-.project ul,
-.project li,
-.project strong {
-  color: #232321 !important;
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.project h3 {
-  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #232321;
-  text-transform: uppercase;
-  margin: 0 0 6px 0;
-}
-
-.project p {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 300;
-  color: #232321;
-  margin: 0 0 10px 0;
-}
-
-.project ul {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  color: #222;
-  margin: 6px 0 0 16px;
-  padding: 0;
-}
-
-.project li {
-  font-size: 15px;
-  font-weight: 300;
-  color: #222;
-  margin-bottom: 2px;
-  font-style: italic;
-}
-
-.project strong {
-  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 600;
-  color: #232321;
-  font-size: 15px;
-  text-transform: none;
-}
-
-
-.project:not(:last-child) {
-  margin-bottom: 0;
-  border-bottom: 2px solid #232321;
-  border-radius: 0;
-}
-
-.projectTooltip {
-  position: absolute;
-  left: 50%;
-  bottom: -28px;
-  transform: translateX(-50%);
+.projectImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
   background: #232321;
-  color: #fafaf7;
-  font-size: 12px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  line-height: 1.1;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s;
-  z-index: 10;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-.project:hover .projectTooltip {
-  opacity: 1;
-  pointer-events: auto;
-}
-.project:hover .projectTooltip {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.project:hover, .project:focus-visible {
-  background: #232321;
-  color: #f5f6ed;
-  border-color: #232321;
-}
-
-.project img {
-  filter: grayscale(100%);
-  border-radius: 10px;
-  transition: filter 0.2s;
-}
-
-.project:hover img {
-  filter: grayscale(0%);
-}
-
-.project * {
-  transition: color 0.2s;
-}
-
-.project:hover * {
-  color: #f5f6ed !important;
 }
 
 .projectImg {
-  width: 68px;
-  height: 48px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 0;
-  background: #111;
+  transition: transform 0.4s ease, filter 0.3s ease;
+  filter: grayscale(30%);
 }
+
+.project:hover .projectImg {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.projectContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .project h3 {
-  margin: 0 0 2px 0;
-  font-size: 1.2rem;
+  font-family: 'Montserrat', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
+  color: #232321;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
 }
-.project p {
+
+.projectDesc {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #5d7b80;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.projectSkills {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  color: #87a7ac;
-  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.projectSkills li {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #232321;
+  line-height: 1.4;
+  padding-left: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.projectSkills li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #5d7b80;
+  font-weight: bold;
+}
+
+.project:hover h3,
+.project:hover .projectDesc,
+.project:hover .projectSkills li {
+  color: #232321;
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-  .project {
-    padding: 18px 16px;
-    gap: 16px;
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
+}
 
-  .projectImg {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
+@media (max-width: 768px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .heading {
     font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+
+  .projectImageWrapper {
+    height: 180px;
+  }
+
+  .projectContent {
+    padding: 16px;
   }
 
   .project h3 {
     font-size: 1.1rem;
   }
 
-  .project p {
+  .projectDesc {
     font-size: 0.9rem;
   }
 
-  .project ul {
-    font-size: 0.9rem;
+  .projectSkills li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectImageWrapper {
+    height: 160px;
   }
 
-  .project li {
-    font-size: 0.9rem;
-  }
-
-  .project strong {
-    font-size: 0.9rem;
+  .projectContent {
+    padding: 14px;
   }
 }
