@@ -77,3 +77,31 @@
   color: #ffffff;
   transform: translateY(-2px);
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .skillCategory {
+    padding: 18px;
+  }
+
+  .categoryTitle {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .skillItem {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}

@@ -169,3 +169,57 @@
   margin-left: 18px;
   white-space: nowrap;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .certificationsSection {
+    max-height: none;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .certificationLink {
+    padding: 10px 0;
+    flex-wrap: wrap;
+  }
+
+  .certNum {
+    min-width: 32px;
+    font-size: 0.95rem;
+    padding-left: 4px;
+  }
+
+  .certLogo {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  .certName {
+    font-size: 14px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    flex: 1 1 100%;
+    order: 3;
+    margin-top: 4px;
+  }
+
+  .certDate {
+    font-size: 13px;
+    margin-left: auto;
+    min-width: auto;
+  }
+
+  .certMain {
+    flex: 1;
+    min-width: 0;
+  }
+}

@@ -5,13 +5,22 @@
   background: #f2f1ec;
   color: #333333;
   min-height: 100vh;
-  transition: background 0.2s;
+  transition: background 0.2s, margin-left 0.3s ease;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 40px;
   margin-top: 0px;
   font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 24px 20px 48px 20px;
+    gap: 32px;
+  }
 }
 
 

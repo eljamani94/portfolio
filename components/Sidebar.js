@@ -1,12 +1,42 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './Sidebar.module.css';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 
 export default function Sidebar() {
+  const [isOpen, setIsOpen] = useState(false);
   const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
   
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+  
   return (
-    <aside className={styles.sidebar}>
+    <>
+      <button 
+        className={styles.menuToggle}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+        aria-expanded={isOpen}
+      >
+        <span className={styles.hamburgerLine}></span>
+        <span className={styles.hamburgerLine}></span>
+        <span className={styles.hamburgerLine}></span>
+      </button>
+      {isOpen && (
+        <div 
+          className={styles.overlay}
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+      <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
       <img src={`${basePath}/pro.png`} alt="Profile" className={styles.profileImage} />
       <h2 className={styles.sidebarName}>Aymen El Jamani</h2>
       <div className={styles.sidebarBio}>
@@ -36,6 +66,14 @@ export default function Sidebar() {
           <span className={styles.contactText}>Casablanca, Morocco</span>
         </div>
       </div>
+      <button 
+        className={styles.closeButton}
+        onClick={closeMenu}
+        aria-label="Close menu"
+      >
+        ×
+      </button>
     </aside>
+    </>
   );
 }

@@ -113,3 +113,44 @@
   color: #87a7ac;
   font-weight: bold;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timelineRow {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .timelineYear {
+    min-width: auto;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-top: 0;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .timelineCompany {
+    font-size: 1rem;
+  }
+
+  .timelineCompanyName {
+    font-size: 0.95rem;
+  }
+
+  .timelinePeriod {
+    font-size: 0.85rem;
+  }
+
+  .descriptionItem {
+    font-size: 0.9rem;
+    padding-left: 14px;
+  }
+}

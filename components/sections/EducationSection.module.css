@@ -96,3 +96,57 @@
   border-radius: 10px;
   box-shadow: 0 2px 12px #1a2324;
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .timelineRow {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .timelineYear {
+    min-width: auto;
+    text-align: left;
+    font-size: 0.85rem;
+    margin-top: 0;
+  }
+
+  .timelineLine {
+    display: none;
+  }
+
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .timelineSchool {
+    font-size: 1rem;
+  }
+
+  .timelineDegree {
+    font-size: 0.95rem;
+  }
+
+  .school {
+    font-size: 15px;
+  }
+
+  .degree {
+    font-size: 14px;
+  }
+
+  .years {
+    font-size: 13px;
+    margin-left: 0;
+  }
+
+  .country {
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .diploma {
+    height: 150px;
+  }
+}
