@@ -9,9 +9,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="construction-banner">
-          Site Under Construction: Coming Soon
-        </div>
         {children}
       </body>
     </html>
