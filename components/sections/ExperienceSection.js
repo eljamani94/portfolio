@@ -21,27 +21,38 @@ export default function ExperienceSection() {
   return (
     <section className={styles.experience}>
       <h2 className={styles.heading}>Other Experience</h2>
-      <ul className={styles.expList}>
-        {experiences.map((exp, index) => (
-          <li key={exp.company + index} className={styles.timelineRow}>
-            <div className={styles.timelineYear}>{exp.period.split(' - ')[0].trim()}</div>
-            <div className={styles.timelineLine} />
-            <div className={styles.timelineContent}>
-              <div className={styles.timelineCompany}>
-                <strong>{exp.title}</strong>
-                {exp.ageRange && <span className={styles.ageRange}> {exp.ageRange}</span>}
+      <div className={styles.comicPage}>
+        <div className={styles.comicHeader}>
+          <div className={styles.headerBanner}>
+            <span className={styles.bannerText}>EXPERIENCE</span>
+          </div>
+        </div>
+        <div className={styles.comicContent}>
+          {experiences.map((exp, index) => (
+            <div key={exp.company + index} className={styles.comicCard}>
+              <div className={styles.cardHeader}>
+                <h3 className={styles.cardTitle}>
+                  {exp.title}
+                  {exp.ageRange && <span className={styles.ageRange}> {exp.ageRange}</span>}
+                </h3>
+                <div className={styles.cardSubtitle}>{exp.company}</div>
               </div>
-              <div className={styles.timelineCompanyName}>{exp.company}</div>
-              <div className={styles.timelinePeriod}>{exp.period} {exp.location}</div>
-              <ul className={styles.descriptionList}>
+              <div className={styles.cardMeta}>
+                <span className={styles.metaItem}>📅 {exp.period}</span>
+                <span className={styles.metaItem}>📍 {exp.location}</span>
+              </div>
+              <div className={styles.cardBody}>
                 {exp.description.map((item, idx) => (
-                  <li key={idx} className={styles.descriptionItem}>{item}</li>
+                  <div key={idx} className={styles.descriptionItem}>
+                    <span className={styles.bullet}>•</span>
+                    <span className={styles.descriptionText}>{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

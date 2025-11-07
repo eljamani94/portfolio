@@ -12,142 +12,261 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 0;
   text-transform: uppercase;
 }
 
-.educationList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+.fileExplorer {
+  background: #f5f5f0;
+  border: 3px solid #000;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: 'Courier New', 'Monaco', monospace;
 }
 
-.timelineRow {
+.explorerHeader {
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid #000;
+}
+
+.windowControls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: #333;
+}
+
+.control:nth-child(1) {
+  background: #ff5f57;
+  border-color: #ff5f57;
+}
+
+.control:nth-child(2) {
+  background: #ffbd2e;
+  border-color: #ffbd2e;
+}
+
+.control:nth-child(3) {
+  background: #28ca42;
+  border-color: #28ca42;
+}
+
+.explorerTitle {
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.explorerContent {
+  padding: 12px;
+  background: #f5f5f0;
+  min-height: 200px;
+}
+
+.folderContainer {
+  margin-bottom: 4px;
+}
+
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #232321;
+}
+
+.folder:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.expandIcon {
+  font-size: 1rem;
+  font-weight: 700;
+  width: 16px;
+  text-align: center;
+  color: #000;
+  font-family: 'Courier New', monospace;
+}
+
+.folderIcon {
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+}
+
+.folderName {
+  flex: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fileCount {
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.filesContainer {
+  margin-left: 28px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  border-left: 2px dashed #ccc;
+  padding-left: 12px;
+}
+
+.file {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 18px;
-  min-height: 44px;
-  background: none;
+  gap: 8px;
+  padding: 10px 8px;
+  margin-bottom: 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  cursor: default;
 }
-.timelineYear {
-  min-width: 150px;
-  font-size: 0.9rem;
-  color: #232321;
-  font-weight: 500;
-  text-align: right;
+
+.file:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.fileIcon {
+  font-size: 1rem;
+  line-height: 1;
+  width: 16px;
+  text-align: center;
   margin-top: 2px;
-  white-space: nowrap;
-  letter-spacing: 0.3px;
+  flex-shrink: 0;
 }
-.timelineLine {
-  width: 2px;
-  background: #e0e0e0;
-  min-height: 38px;
-  margin: 0 12px 0 0;
-  align-self: stretch;
-}
-.timelineContent {
+
+.fileContent {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fileName {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #232321;
+  line-height: 1.3;
+}
+
+.fileDetails {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.timelineSchool {
-  font-size: 1.08rem;
-  color: #232321;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-.timelineDegree {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0px;
+
+.fileDegree {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
 }
 
-.school {
-  font-weight: 600;
-  font-size: 16px;
-  color: #222;
-}
-
-.degree {
-  font-size: 15px;
-  color: #444;
-}
-
-.years {
-  color: #6b7280;
-  font-size: 14px;
-  margin-left: 18px;
-  white-space: nowrap;
-}
-
-.country {
-  color: #b5b5b5;
-  font-size: 13px;
-  margin-left: 8px;
-  white-space: nowrap;
-}
-
-.diploma {
-  height: 200px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px #1a2324;
+.fileMeta {
+  font-size: 0.75rem;
+  color: #888;
+  font-style: italic;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .timelineRow {
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .timelineYear {
-    min-width: auto;
-    text-align: left;
-    font-size: 0.85rem;
-    margin-top: 0;
-  }
-
-  .timelineLine {
-    display: none;
-  }
-
   .heading {
     font-size: 1.6rem;
+    margin-bottom: 16px;
   }
 
-  .timelineSchool {
-    font-size: 1rem;
+  .fileExplorer {
+    border-width: 2px;
   }
 
-  .timelineDegree {
-    font-size: 0.95rem;
+  .explorerHeader {
+    padding: 6px 10px;
   }
 
-  .school {
-    font-size: 15px;
+  .explorerTitle {
+    font-size: 0.8rem;
   }
 
-  .degree {
-    font-size: 14px;
+  .explorerContent {
+    padding: 10px;
   }
 
-  .years {
-    font-size: 13px;
-    margin-left: 0;
+  .folder {
+    padding: 6px 8px;
+    font-size: 0.9rem;
   }
 
-  .country {
-    font-size: 12px;
-    margin-left: 0;
+  .folderIcon {
+    font-size: 1.1rem;
+    width: 18px;
   }
 
-  .diploma {
-    height: 150px;
+  .filesContainer {
+    margin-left: 24px;
+    padding-left: 10px;
+  }
+
+  .file {
+    padding: 8px 6px;
+  }
+
+  .fileName {
+    font-size: 0.9rem;
+  }
+
+  .fileDegree {
+    font-size: 0.8rem;
+  }
+
+  .fileMeta {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+
+  .folder {
+    font-size: 0.85rem;
+  }
+
+  .fileName {
+    font-size: 0.85rem;
+  }
+
+  .fileDegree {
+    font-size: 0.75rem;
   }
 }

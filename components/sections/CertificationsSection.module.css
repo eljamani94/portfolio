@@ -1,5 +1,4 @@
 .certificationsSection {
-  max-height: 350px;
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -12,215 +11,176 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-top: 0;
   text-transform: uppercase;
 }
 
-.description {
-  color: #444;
-  margin-top: 0;
-  margin-bottom: 28px;
-  font-size: 17px;
+.stickyNotesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.certificationsList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.certificationRow {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  border-bottom: 1.2px solid #232321;
-  background: none;
-  gap: 0;
-  transition: background 0.25s, color 0.25s, filter 0.25s;
-  cursor: pointer;
-  position: relative;
-}
-
-.certificationLink {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px 0 8px 0;
+.stickyNote {
+  background: #ffeb3b;
+  padding: 16px;
+  border-radius: 2px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  color: inherit;
-  gap: 0;
-  position: relative;
-}
-.certificationRow:hover {
-  background: #232321;
-  color: #fafaf7;
-  border-bottom: 1.2px solid #fafaf7;
-}
-.certificationRow:hover .certTooltip {
-  opacity: 1;
-  pointer-events: auto;
-}
-.certificationRow:hover .certNum,
-.certificationRow:hover .certName,
-.certificationRow:hover .certDate {
-  color: #fafaf7;
-}
-.certificationRow:hover .certLogo {
-  filter: invert(1) grayscale(100%) brightness(1.1);
-}
-.certificationRow:hover .certMain {
-  filter: none;
-}
-.certificationRow:last-child {
-  border-bottom: none;
-}
-.certNum {
-  min-width: 38px;
-  font-weight: 600;
   color: #232321;
-  font-size: 1.08rem;
-  text-align: left;
-  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', 'Monaco', monospace;
 }
-.certMain {
+
+.stickyNote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.stickyNote:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.25),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.1);
+  z-index: 100 !important;
+}
+
+.noteHeader {
   display: flex;
   align-items: center;
-  flex: 1 1 0;
-  min-width: 0;
-  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
 }
-.certLogo {
-  width: 22px;
-  height: 22px;
+
+.noteLogo {
+  width: 24px;
+  height: 24px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.6);
+  filter: grayscale(20%) contrast(1.1);
   flex-shrink: 0;
-  margin-right: 8px;
-  display: block;
-}
-.certName {
-  font-weight: 500;
-  font-size: 15px;
-  color: #222;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.certDate {
-  min-width: 72px;
-  color: #232321;
-  font-size: 1rem;
-  text-align: right;
-  margin-left: auto;
-  white-space: nowrap;
-  font-weight: 400;
-  justify-self: flex-end;
-  align-self: center;
-}
-.certTooltip {
-  position: absolute;
-  left: 50%;
-  bottom: -36px;
-  transform: translateX(-50%);
-  background: #232321;
-  color: #fafaf7;
-  font-size: 0.98rem;
-  padding: 6px 16px;
-  border-radius: 7px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.23s;
-  z-index: 2;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.certLogo {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  flex-shrink: 0;
-  margin-right: 8px;
-  display: block;
-
+.noteDate {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
-.certName {
-  font-weight: 500;
-  font-size: 15px;
-  color: #222;
+.noteContent {
   flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
-.certDate {
-  color: #6b7280;
-  font-size: 14px;
-  margin-left: 18px;
-  white-space: nowrap;
+.noteTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0;
+  color: #232321;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  word-break: break-word;
+}
+
+.noteFooter {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.noteHint {
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  text-transform: lowercase;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .certificationsSection {
-    max-height: none;
-  }
-
   .heading {
     font-size: 1.6rem;
+    margin-bottom: 24px;
   }
 
-  .description {
-    font-size: 15px;
-    margin-bottom: 20px;
+  .stickyNotesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px 0;
+    max-width: 100%;
   }
 
-  .certificationLink {
-    padding: 10px 0;
-    flex-wrap: wrap;
+  .stickyNote {
+    min-height: 160px;
+    padding: 14px;
   }
 
-  .certNum {
-    min-width: 32px;
-    font-size: 0.95rem;
-    padding-left: 4px;
+  .noteTitle {
+    font-size: 0.85rem;
   }
 
-  .certLogo {
+  .noteLogo {
     width: 20px;
     height: 20px;
-    margin-right: 6px;
   }
 
-  .certName {
-    font-size: 14px;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    flex: 1 1 100%;
-    order: 3;
-    margin-top: 4px;
+  .noteDate {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stickyNotesContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
-  .certDate {
-    font-size: 13px;
-    margin-left: auto;
-    min-width: auto;
+  .stickyNote {
+    min-height: 150px;
+    padding: 12px;
   }
 
-  .certMain {
-    flex: 1;
-    min-width: 0;
+  .noteTitle {
+    font-size: 0.8rem;
   }
 }

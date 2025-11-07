@@ -65,75 +65,90 @@ export default function ContactSection() {
 
   return (
     <section className={styles.contactSectionWrapper}>
-      <h2 className={styles.heading}>
-        Contact me.
-      </h2>
-      <p className={styles.contactDescription}>
-        I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
-      </p>
-      <form onSubmit={handleSubmit} className={styles.contactFormWrapper}>
-        <div className={styles.flexRow}>
-          <div className={styles.flexItem}>
-            <label htmlFor="name" className={styles.formLabel}>Name<span style={{ color: 'red' }}>*</span></label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              placeholder="Your Name"
-              className={styles.inputField}
-            />
-          </div>
-          <div className={styles.flexItem}>
-            <label htmlFor="email" className={styles.formLabel}>Email<span style={{ color: 'red' }}>*</span></label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              placeholder="john@doe.com"
-              className={styles.inputField}
-            />
+      <div className={styles.retroWindow}>
+        <div className={styles.windowTitleBar}>
+          <span className={styles.windowTitle}>Contact Me</span>
+          <div className={styles.windowControls}>
+            <button type="button" className={styles.windowButton} aria-label="Minimize">
+              <span className={styles.minimizeIcon}>─</span>
+            </button>
+            <button type="button" className={styles.windowButton} aria-label="Maximize">
+              <span className={styles.maximizeIcon}>□</span>
+            </button>
+            <button type="button" className={styles.windowButton} aria-label="Close">
+              <span className={styles.closeIcon}>✕</span>
+            </button>
           </div>
         </div>
-        <div className={styles.textAreaContainer}>
-          <label htmlFor="message" className={styles.formLabel}>Message<span style={{ color: 'red' }}>*</span></label>
-          <textarea
-            id="message"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            required
-            placeholder="Hello there, I would like to ask you about..."
-            maxLength={500}
-            rows={6}
-            className={styles.textArea}
-          />
-          <div className={styles.characterCount}>
-            {form.message.length}/500
-          </div>
+        <div className={styles.windowContent}>
+          <p className={styles.contactDescription}>
+            I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+          </p>
+          <form onSubmit={handleSubmit} className={styles.contactFormWrapper}>
+            <div className={styles.flexRow}>
+              <div className={styles.flexItem}>
+                <label htmlFor="name" className={styles.formLabel}>Name<span style={{ color: '#E86A4A' }}>*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                  className={styles.inputField}
+                />
+              </div>
+              <div className={styles.flexItem}>
+                <label htmlFor="email" className={styles.formLabel}>Email<span style={{ color: '#E86A4A' }}>*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="john@doe.com"
+                  className={styles.inputField}
+                />
+              </div>
+            </div>
+            <div className={styles.textAreaContainer}>
+              <label htmlFor="message" className={styles.formLabel}>Message<span style={{ color: '#E86A4A' }}>*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                required
+                placeholder="Hello there, I would like to ask you about..."
+                maxLength={500}
+                rows={6}
+                className={styles.textArea}
+              />
+              <div className={styles.characterCount}>
+                {form.message.length}/500
+              </div>
+            </div>
+            <button
+              type="submit"
+              className={styles.sendButton}
+              disabled={sending || !form.name || !form.email || !form.message}
+            >
+              {sending ? 'Sending...' : 'Send'}
+            </button>
+            {status && (
+              <div className={
+                status.startsWith('✅')
+                  ? `${styles.statusMessage} ${styles.statusSuccess}`
+                  : `${styles.statusMessage} ${styles.statusError}`
+              }>
+                {status}
+              </div>
+            )}
+          </form>
         </div>
-        <button
-          type="submit"
-          className={styles.sendButton}
-          disabled={sending || !form.name || !form.email || !form.message}
-        >
-          {sending ? 'Sending...' : <><span className={styles.sendIcon}>✉️</span> Send</>}
-        </button>
-        {status && (
-          <div className={
-            status.startsWith('✅')
-              ? `${styles.statusMessage} ${styles.statusSuccess}`
-              : `${styles.statusMessage} ${styles.statusError}`
-          }>
-            {status}
-          </div>
-        )}
-      </form>
+      </div>
     </section>
   );
 }
