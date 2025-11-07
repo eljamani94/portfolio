@@ -36,12 +36,23 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 8px 0 8px 0;
+  padding: 0;
   border-bottom: 1.2px solid #232321;
   background: none;
   gap: 0;
   transition: background 0.25s, color 0.25s, filter 0.25s;
   cursor: pointer;
+  position: relative;
+}
+
+.certificationLink {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0 8px 0;
+  text-decoration: none;
+  color: inherit;
+  gap: 0;
   position: relative;
 }
 .certificationRow:hover {

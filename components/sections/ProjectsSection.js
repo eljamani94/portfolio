@@ -5,37 +5,48 @@ const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 
 const projects = [
   {
-    name: 'House Prices – Advanced Regression Techniques | Kaggle',
+    name: 'GPT from Scratch',
     image: `${basePath}/project1.jpg`,
-    desc: 'Score: 13.276 RMSLE (Leaderboard)',
+    desc: 'A from-scratch implementation of GPT-style transformer decoder architecture for text generation',
     skills: [
-      'Built an end-to-end regression pipeline with Scikit-learn, including KNN imputation, feature scaling, One-Hot Encoding, cyclical features, and log-target transformation.',
-      'Tuned ensemble models (Gradient Boosting & Random Forest) via GridSearchCV and (SelectFromModel) to achieve robust generalization.',
-      'Strengthened skills in feature engineering, model optimization, and cross-validation, improving baseline RMSLE from 0.21 → 0.13.',
+      'Built complete GPT-style transformer decoder architecture using TensorFlow/Keras from scratch.',
+      'Implemented custom attention mechanisms, positional embeddings, and training pipeline.',
+      'Developed text generation capabilities with configurable model parameters and architecture.',
     ],
-    link: 'https://kaggle.com/',
+    link: 'https://github.com/eljamani94/gpt-from-scratch',
   },
   {
-    name: 'Olist E-Commerce Data Analysis',
+    name: 'RAG System for European Parliament Documents',
     image: `${basePath}/project2.jpg`,
-    desc: 'Predicted house sale prices using advanced regression pipelines.',
+    desc: 'Retrieval Augmented Generation system for European Parliament transcripts',
     skills: [
-      'Cleaned and joined multi-table e-commerce data using pandas and SQLwith an OOP pipeline design.',
-      'Built an interactive Plotly Dash dashboard to visualize sales trends, customer satisfaction, and delivery performance',
-      'Applied machine learning models to predict late deliveries, improving logistics efficiency.',
+      'Built RAG system using LangChain, Chroma vector store, and Google Gemini for parliamentary documents.',
+      'Implemented semantic search and temporal filtering for efficient question-answering.',
+      'Developed persistent embeddings system for optimized retrieval over large document collections.',
     ],
-    link: 'https://github.com/',
+    link: 'https://github.com/eljamani94/european-parliament-rag-system',
   },
   {
-    name: 'Cyclistic Bike Share Case Study',
+    name: 'House Prices Prediction - Kaggle Competition',
     image: `${basePath}/project3.jpg`,
-    desc: 'Analyzed e-commerce data to optimize operations and delivery',
+    desc: 'Advanced regression pipeline achieving RMSE of 0.12336 - Top 15% solution',
     skills: [
-      'Processed and analyzed 500k+ bike share trips using R, data.table, and ggplot2, improving data processing speed by 4× compared to standard methods.',
-      'Built interactive visualizations to identify peak usage hours, high-demand stations, and rider behavior trends.',
-      'Delivered insights that informed marketing campaigns and operational adjustments, increasing weekday ridership by 12% and reducing idle bikes by 15%.',
+      'Built end-to-end regression pipeline with comprehensive EDA and feature engineering.',
+      'Implemented ensemble methods combining Gradient Boosting and Random Forest models.',
+      'Achieved top 15% ranking on Kaggle leaderboard with RMSE of 0.12336.',
     ],
-    link: 'https://github.com/',
+    link: 'https://github.com/eljamani94/house-prices-prediction',
+  },
+  {
+    name: 'Cyclistic Bike Share Analysis',
+    image: `${basePath}/project4.jpg`,
+    desc: 'Complete data analysis comparing casual riders vs annual members',
+    skills: [
+      'Performed comprehensive data cleaning and exploratory analysis of bike-share usage patterns using R.',
+      'Created visualizations to identify usage trends and behavioral differences between user types.',
+      'Delivered actionable business recommendations for membership conversion strategy.',
+    ],
+    link: 'https://github.com/eljamani94/house-prices-prediction',
   },
 ];
 

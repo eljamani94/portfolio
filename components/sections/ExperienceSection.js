@@ -2,19 +2,18 @@ import styles from './ExperienceSection.module.css';
 
 const experiences = [
   {
-    company: 'PixelForge Studios',
-    role: 'Led the design team in creating user-centric mobile and web applications, improving the user experience and increasing user engagement.',
-    period: 'Jan 2020 – Present',
-  },
-  {
-    company: 'BlueWave Innovators',
-    role: 'Developed and implemented design strategies for new product lines, collaborated closely with engineers and product managers.',
-    period: 'Jun 2017 – Dec 2019',
-  },
-  {
-    company: 'TrendCraft Solutions',
-    role: 'Designed user interfaces for e-commerce platforms, focusing on enhancing usability and conversion rates.',
-    period: 'Mar 2013 – May 2017',
+    title: 'Physical Education & English Teacher',
+    ageRange: '(Ages 1-5)',
+    company: 'KidsHome 毅英宝贝家',
+    period: '02/2021 - 09/2024',
+    location: 'Beijing, China',
+    description: [
+      'Taught early childhood classes combining physical education and beginner English for children aged 1–5.',
+      'Managed a class of 10 children with parent participation, creating a safe and engaging learning environment.',
+      'Designed original class themes, dances, and nursery rhymes to develop motor skills, language, and social interaction.',
+      'Applied observational and analytical skills to adapt activities based on each child\'s development.',
+      'Strengthened communication and storytelling abilities by explaining concepts clearly to parents and learners',
+    ],
   },
 ];
 
@@ -23,14 +22,22 @@ export default function ExperienceSection() {
     <section className={styles.experience}>
       <h2 className={styles.heading}>Other Experience</h2>
       <ul className={styles.expList}>
-        {experiences.map((exp) => (
-          <li key={exp.company} className={styles.timelineRow}>
-            <div className={styles.timelineYear}>{exp.period.split('–')[0].trim()}</div>
+        {experiences.map((exp, index) => (
+          <li key={exp.company + index} className={styles.timelineRow}>
+            <div className={styles.timelineYear}>{exp.period.split(' - ')[0].trim()}</div>
             <div className={styles.timelineLine} />
             <div className={styles.timelineContent}>
-              <div className={styles.timelineCompany}><strong>{exp.company}</strong></div>
-              <div className={styles.timelineRole}>{exp.role}</div>
-              <div className={styles.timelinePeriod}>{exp.period}</div>
+              <div className={styles.timelineCompany}>
+                <strong>{exp.title}</strong>
+                {exp.ageRange && <span className={styles.ageRange}> {exp.ageRange}</span>}
+              </div>
+              <div className={styles.timelineCompanyName}>{exp.company}</div>
+              <div className={styles.timelinePeriod}>{exp.period} {exp.location}</div>
+              <ul className={styles.descriptionList}>
+                {exp.description.map((item, idx) => (
+                  <li key={idx} className={styles.descriptionItem}>{item}</li>
+                ))}
+              </ul>
             </div>
           </li>
         ))}

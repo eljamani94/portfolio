@@ -51,10 +51,14 @@ export default function ContactSection() {
         setStatus('✅ Message sent successfully!');
         setForm({ name: '', email: '', message: '' });
       } else {
-        setStatus('❌ Failed to send message. Try again later.');
+        // Get the error details from the response
+        const errorData = await res.text();
+        console.error('EmailJS Error:', errorData);
+        setStatus(`❌ Failed to send message: ${errorData || 'Try again later.'}`);
       }
     } catch (err) {
-      setStatus('❌ Error sending message.');
+      console.error('Network Error:', err);
+      setStatus(`❌ Error sending message: ${err.message}`);
     }
     setSending(false);
   };

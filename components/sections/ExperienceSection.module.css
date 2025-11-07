@@ -21,7 +21,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  max-width: 600px;
+  width: 100%;
 }
 
 .timelineRow {
@@ -64,6 +64,18 @@
   margin-bottom: 2px;
 }
 
+.ageRange {
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+.timelineCompanyName {
+  font-size: 1rem;
+  color: #232321;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
 .timelineRole {
   font-size: 1rem;
   color: #444;
@@ -74,4 +86,28 @@
 .timelinePeriod {
   font-size: 0.9rem;
   color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.descriptionItem {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.descriptionItem::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #87a7ac;
+  font-weight: bold;
 }
