@@ -37,7 +37,7 @@ export default function Sidebar() {
         />
       )}
       <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ''}`}>
-      <img src={`${basePath}/pro.png`} alt="Profile" className={styles.profileImage} />
+      <img src={`${basePath}/my_photo.jpg`} alt="Profile" className={styles.profileImage} />
       <h2 className={styles.sidebarName}>Aymen El Jamani</h2>
       <div className={styles.sidebarBio}>
         Data Scientist | ML Engineer
