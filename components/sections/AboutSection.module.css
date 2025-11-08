@@ -108,13 +108,21 @@
 }
 
 .aboutText {
-  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   font-size: 1.05rem;
   color: #000000;
   line-height: 1.8;
   margin: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
+}
+
+.aboutText p {
+  margin: 0 0 1.2em 0;
+}
+
+.aboutText p:last-child {
+  margin-bottom: 0;
 }
 
 /* Responsive styles */

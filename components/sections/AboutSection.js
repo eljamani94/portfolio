@@ -15,9 +15,20 @@ export default function AboutSection() {
           <h3 className={styles.windowTitle}>About Me</h3>
         </div>
         <div className={styles.windowContent}>
-          <p className={styles.aboutText}>
-            Passionate about AI and data science, with experience in machine learning and deep learning. My time in China strengthened my communication, adaptability, and teamwork skills. My goal is to work with collaborative, driven, and innovative people, apply and grow my skills, and build intelligent systems that make real-world impact.
-          </p>
+          <div className={styles.aboutText}>
+            <p>
+              I'm Aymen El Jamani, a data scientist based in Casablanca with a passion for turning complexity into clarity.
+            </p>
+            <p>
+              My journey began with a Master's in IT from Supinfo International University and took an unexpected turn when I moved to China, an experience that fundamentally changed how I approach problems and work with people across cultures. After stepping away from tech, I discovered that what I missed most was the work itself: the challenge of extracting meaning from data and using it to drive real decisions.
+            </p>
+            <p>
+              Today, I'm focused on data science, building skills in Python, machine learning, and deep learning through hands-on projects that balance technical rigor with creative problem-solving. What drives me is the intersection of logic and impact, whether that's understanding user behavior, optimizing business performance, or uncovering insights that weren't obvious before.
+            </p>
+            <p>
+              I'm looking for opportunities where curiosity is valued, where challenges are met collaboratively, and where the work matters beyond the code. If you're building something meaningful and need someone who brings both technical capability and a global perspective, let's connect.
+            </p>
+          </div>
         </div>
       </div>
     </section>

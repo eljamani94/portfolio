@@ -69,7 +69,7 @@ export default function ContactSection() {
         Contact me.
       </h2>
       <p className={styles.contactDescription}>
-        I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+        I love diving into new challenges and creative projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
       </p>
       <div className={styles.retroWindow}>
         <div className={styles.windowTitleBar}>
