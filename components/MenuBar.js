@@ -4,6 +4,8 @@ import styles from './MenuBar.module.css';
 import { FaHome, FaFolderOpen, FaWrench, FaBriefcase, FaGraduationCap, FaPen, FaEnvelope, FaDownload, FaUser } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
+const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
+
 const sections = [
   { id: 'projects', icon: <FaFolderOpen />, label: 'Projects' },
   { id: 'skills', icon: <FaWrench />, label: 'Skills' },
@@ -74,7 +76,7 @@ export default function MenuBar() {
             </li>
           ))}
           <li className={styles.downloadBtn} title="Download Resume">
-            <a href="/resume_french.pdf" download style={{display:'flex',alignItems:'center',justifyContent:'center',color:'inherit'}}>
+            <a href={`${basePath}/resume_french.pdf`} download="resume_french.pdf" style={{display:'flex',alignItems:'center',justifyContent:'center',color:'inherit',textDecoration:'none'}}>
               <FaDownload />
             </a>
             <div className={styles.arrowText}>DOWNLOAD RESUME</div>

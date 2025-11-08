@@ -82,6 +82,18 @@
   box-shadow: 2px 2px 0px rgba(1, 1, 105, 0.2);
   animation: buttonBlink 1s steps(2, end) infinite;
   position: relative;
+  pointer-events: auto;
+}
+
+.downloadBtn a {
+  pointer-events: auto;
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .downloadBtn:hover {
