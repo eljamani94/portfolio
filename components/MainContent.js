@@ -5,6 +5,7 @@ import ExperienceSection from './sections/ExperienceSection';
 import SkillsSection from './sections/SkillsSection';
 import CertificationsSection from './sections/CertificationsSection';
 import EducationSection from './sections/EducationSection';
+import AboutSection from './sections/AboutSection';
 import ContactSection from './sections/ContactSection';
 import MenuBar from './MenuBar';
 
@@ -28,6 +29,7 @@ const sections = [
     )
   },
   { id: 'experience', label: 'Experience', component: <ExperienceSection /> },
+  { id: 'about', label: 'About Me', component: <AboutSection /> },
   { id: 'contact', label: 'Contact Me', component: <ContactSection /> },
 ];
 
@@ -82,6 +84,7 @@ export default function MainContent() {
                 'education',
                 'experience',
                 'skills',
+                'about',
               ].includes(section.id)
                 ? `${styles.sectionWrapper} ${styles[section.id]}`
                 : styles.sectionWrapper

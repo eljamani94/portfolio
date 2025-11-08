@@ -45,11 +45,17 @@ const educationList = [
 ];
 
 export default function EducationSection() {
-  // Initialize all folders as expanded
+  // Initialize only the first folder (most recent) as expanded
   const allYearRanges = [...new Set(educationList.map(edu => edu.yearRange))];
+  // Sort by first year, descending (same as in render)
+  const sortedYearRanges = allYearRanges.sort((a, b) => {
+    const yearA = parseInt(a.split('-')[0]);
+    const yearB = parseInt(b.split('-')[0]);
+    return yearB - yearA;
+  });
   const [expandedFolders, setExpandedFolders] = useState(
-    allYearRanges.reduce((acc, yearRange) => {
-      acc[yearRange] = true;
+    sortedYearRanges.reduce((acc, yearRange, index) => {
+      acc[yearRange] = index === 0; // Only first folder is open
       return acc;
     }, {})
   );
@@ -75,14 +81,6 @@ export default function EducationSection() {
     <section className={styles.educationSection}>
       <h2 className={styles.heading}>Education</h2>
       <div className={styles.fileExplorer}>
-        <div className={styles.explorerHeader}>
-          <div className={styles.windowControls}>
-            <span className={styles.control}></span>
-            <span className={styles.control}></span>
-            <span className={styles.control}></span>
-          </div>
-          <div className={styles.explorerTitle}>Education</div>
-        </div>
         <div className={styles.explorerContent}>
           {Object.keys(groupedEducation).sort((a, b) => {
             // Sort by first year, descending
@@ -95,37 +93,48 @@ export default function EducationSection() {
             
             return (
               <div key={yearRange} className={styles.folderContainer}>
-                <div 
-                  className={styles.folder}
-                  onClick={() => toggleFolder(yearRange)}
-                >
-                  <span className={styles.expandIcon}>
-                    {isExpanded ? '−' : '+'}
-                  </span>
-                  <span className={styles.folderIcon}>
-                    {isExpanded ? '📂' : '📁'}
-                  </span>
-                  <span className={styles.folderName}>{yearRange}</span>
-                  <span className={styles.fileCount}>({files.length})</span>
-                </div>
-                {isExpanded && (
-                  <div className={styles.filesContainer}>
-                    {files.map((edu, idx) => (
-                      <div key={edu.school + edu.startDate} className={styles.file}>
-                        <span className={styles.fileIcon}>📄</span>
-                        <div className={styles.fileContent}>
-                          <div className={styles.fileName}>{edu.school}</div>
-                          <div className={styles.fileDetails}>
-                            <span className={styles.fileDegree}>{edu.degree}</span>
-                            <span className={styles.fileMeta}>
-                              {edu.startDate} – {edu.endDate} • {edu.country}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                <div className={styles.retroWindow}>
+                  <div 
+                    className={styles.windowTopBar}
+                    onClick={() => toggleFolder(yearRange)}
+                  >
+                    <div className={styles.trafficLights}>
+                      <span className={styles.trafficLight}></span>
+                      <span className={styles.trafficLight}></span>
+                      <span className={styles.trafficLight}></span>
+                    </div>
+                    <div className={styles.folder}>
+                      <span className={styles.expandIcon}>
+                        {isExpanded ? '−' : '+'}
+                      </span>
+                      <span className={styles.folderIcon}>
+                        {isExpanded ? '📂' : '📁'}
+                      </span>
+                      <span className={styles.folderName}>{yearRange}</span>
+                      <span className={styles.fileCount}>({files.length})</span>
+                    </div>
                   </div>
-                )}
+                  {isExpanded && (
+                    <div className={styles.windowContent}>
+                      <div className={styles.filesContainer}>
+                        {files.map((edu, idx) => (
+                          <div key={edu.school + edu.startDate} className={styles.file}>
+                            <span className={styles.fileIcon}>📄</span>
+                            <div className={styles.fileContent}>
+                              <div className={styles.fileName}>{edu.school}</div>
+                              <div className={styles.fileDetails}>
+                                <span className={styles.fileDegree}>{edu.degree}</span>
+                                <span className={styles.fileMeta}>
+                                  {edu.startDate} – {edu.endDate} • {edu.country}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })}

@@ -65,29 +65,27 @@ export default function ContactSection() {
 
   return (
     <section className={styles.contactSectionWrapper}>
+      <h2 className={styles.heading}>
+        Contact me.
+      </h2>
+      <p className={styles.contactDescription}>
+        I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
+      </p>
       <div className={styles.retroWindow}>
         <div className={styles.windowTitleBar}>
-          <span className={styles.windowTitle}>Contact Me</span>
-          <div className={styles.windowControls}>
-            <button type="button" className={styles.windowButton} aria-label="Minimize">
-              <span className={styles.minimizeIcon}>─</span>
-            </button>
-            <button type="button" className={styles.windowButton} aria-label="Maximize">
-              <span className={styles.maximizeIcon}>□</span>
-            </button>
-            <button type="button" className={styles.windowButton} aria-label="Close">
-              <span className={styles.closeIcon}>✕</span>
-            </button>
+          <div className={styles.trafficLights}>
+            <span className={styles.trafficLight}></span>
+            <span className={styles.trafficLight}></span>
+            <span className={styles.trafficLight}></span>
           </div>
+          <span className={styles.windowTitle}>Contact Form</span>
+          <button className={styles.closeButton} type="button" aria-label="Close">×</button>
         </div>
         <div className={styles.windowContent}>
-          <p className={styles.contactDescription}>
-            I'm always eager to explore new opportunities and take on exciting projects. If you have a project in mind, or just want to say hi, feel free to send me a message.
-          </p>
           <form onSubmit={handleSubmit} className={styles.contactFormWrapper}>
             <div className={styles.flexRow}>
               <div className={styles.flexItem}>
-                <label htmlFor="name" className={styles.formLabel}>Name<span style={{ color: '#E86A4A' }}>*</span></label>
+                <label htmlFor="name" className={styles.formLabel}>Name<span className={styles.requiredStar}>*</span></label>
                 <input
                   type="text"
                   id="name"
@@ -100,7 +98,7 @@ export default function ContactSection() {
                 />
               </div>
               <div className={styles.flexItem}>
-                <label htmlFor="email" className={styles.formLabel}>Email<span style={{ color: '#E86A4A' }}>*</span></label>
+                <label htmlFor="email" className={styles.formLabel}>Email<span className={styles.requiredStar}>*</span></label>
                 <input
                   type="email"
                   id="email"
@@ -114,7 +112,7 @@ export default function ContactSection() {
               </div>
             </div>
             <div className={styles.textAreaContainer}>
-              <label htmlFor="message" className={styles.formLabel}>Message<span style={{ color: '#E86A4A' }}>*</span></label>
+              <label htmlFor="message" className={styles.formLabel}>Message<span className={styles.requiredStar}>*</span></label>
               <textarea
                 id="message"
                 name="message"
@@ -135,20 +133,53 @@ export default function ContactSection() {
               className={styles.sendButton}
               disabled={sending || !form.name || !form.email || !form.message}
             >
-              {sending ? 'Sending...' : 'Send'}
+              {sending ? 'Sending...' : 'OK'}
             </button>
-            {status && (
-              <div className={
-                status.startsWith('✅')
-                  ? `${styles.statusMessage} ${styles.statusSuccess}`
-                  : `${styles.statusMessage} ${styles.statusError}`
-              }>
-                {status}
-              </div>
-            )}
           </form>
         </div>
       </div>
+      {status && (
+        <div className={styles.retroWindow}>
+          <div className={
+            status.startsWith('✅')
+              ? `${styles.windowTitleBar} ${styles.successTitleBar}`
+              : `${styles.windowTitleBar} ${styles.errorTitleBar}`
+          }>
+            <div className={styles.trafficLights}>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+            </div>
+            <span className={styles.windowTitle}>
+              {status.startsWith('✅') ? 'Success' : 'Error'}
+            </span>
+            <button 
+              className={styles.closeButton} 
+              type="button" 
+              onClick={() => setStatus('')}
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+          <div className={styles.windowContent}>
+            <div className={
+              status.startsWith('✅')
+                ? `${styles.statusMessage} ${styles.statusSuccess}`
+                : `${styles.statusMessage} ${styles.statusError}`
+            }>
+              {status.replace('✅ ', '').replace('❌ ', '')}
+            </div>
+            <button
+              type="button"
+              className={styles.okButton}
+              onClick={() => setStatus('')}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

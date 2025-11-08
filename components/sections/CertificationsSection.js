@@ -9,7 +9,7 @@ const certifications = [
     date: '2025/09',
     logo: `${basePath}/alx.png`,
     link: 'https://savanna.alxafrica.com/certificates/ePBn78LEzJ',
-    color: '#ffeb3b', // Yellow
+    color: '#1E93AB', // Teal
     rotation: -2
   },
   {
@@ -17,7 +17,7 @@ const certifications = [
     date: '2025/05',
     logo: `${basePath}/alx.png`,
     link: 'https://savanna.alxafrica.com/certificates/rYpyBLTzf9',
-    color: '#ff9800', // Orange
+    color: '#77CDFF', // Light blue
     rotation: 1.5
   },
   {
@@ -25,7 +25,7 @@ const certifications = [
     date: '2025/03',
     logo: `${basePath}/pcap.png`,
     link: 'https://drive.google.com/file/d/1kVLdIUPDQqPjVwXklQiLACrqYWz5a7Af/view',
-    color: '#4caf50', // Green
+    color: '#E62727', // Red
     rotation: -1
   },
   {
@@ -33,7 +33,7 @@ const certifications = [
     date: '2021/07',
     logo: `${basePath}/stanford.png`,
     link: 'https://www.coursera.org/account/accomplishments/verify/MCKWATV3Q8XA',
-    color: '#2196f3', // Blue
+    color: '#F95454', // Light red
     rotation: 2
   },
 ];

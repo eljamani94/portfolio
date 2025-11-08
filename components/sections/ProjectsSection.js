@@ -5,7 +5,7 @@ const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
 const projects = [
   {
     name: 'GPT from Scratch',
-    image: `${basePath}/project1.jpg`,
+    image: `${basePath}/project1.png`,
     desc: 'A from-scratch implementation of GPT-style transformer decoder architecture for text generation',
     skills: [
       'Built complete GPT-style transformer decoder architecture using TensorFlow/Keras from scratch.',
@@ -13,10 +13,12 @@ const projects = [
       'Developed text generation capabilities with configurable model parameters and architecture.',
     ],
     link: 'https://github.com/eljamani94/gpt-from-scratch',
+    color: '#1E93AB', // Teal
+    rotation: -1.5
   },
   {
     name: 'RAG System for European Parliament Documents',
-    image: `${basePath}/project2.jpg`,
+    image: `${basePath}/project2.png`,
     desc: 'Retrieval Augmented Generation system for European Parliament transcripts',
     skills: [
       'Built RAG system using LangChain, Chroma vector store, and Google Gemini for parliamentary documents.',
@@ -24,10 +26,12 @@ const projects = [
       'Developed persistent embeddings system for optimized retrieval over large document collections.',
     ],
     link: 'https://github.com/eljamani94/european-parliament-rag-system',
+    color: '#77CDFF', // Light blue
+    rotation: 2
   },
   {
     name: 'House Prices Prediction - Kaggle Competition',
-    image: `${basePath}/project3.jpg`,
+    image: `${basePath}/project3.png`,
     desc: 'Advanced regression pipeline achieving RMSE of 0.12336 - Top 15% solution',
     skills: [
       'Built end-to-end regression pipeline with comprehensive EDA and feature engineering.',
@@ -35,10 +39,12 @@ const projects = [
       'Achieved top 15% ranking on Kaggle leaderboard with RMSE of 0.12336.',
     ],
     link: 'https://github.com/eljamani94/house-prices-prediction',
+    color: '#E62727', // Red
+    rotation: -2
   },
   {
     name: 'Cyclistic Bike Share Analysis',
-    image: `${basePath}/project4.jpg`,
+    image: `${basePath}/project4.png`,
     desc: 'Complete data analysis comparing casual riders vs annual members',
     skills: [
       'Performed comprehensive data cleaning and exploratory analysis of bike-share usage patterns using R.',
@@ -46,52 +52,55 @@ const projects = [
       'Delivered actionable business recommendations for membership conversion strategy.',
     ],
     link: 'https://github.com/eljamani94/house-prices-prediction',
+    color: '#F95454', // Light red
+    rotation: 1
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <div className={styles.projects}>
-      <h2 className={styles.heading}>Recent Projects</h2>
-      <div className={styles.projectGrid}>
+    <section className={styles.projectsSection}>
+      <h2 className={styles.heading}>Projects</h2>
+      <div className={styles.stickyNotesContainer}>
         {projects.map((proj, idx) => (
           <a
             key={proj.name}
             href={proj.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.project}
+            className={styles.stickyNote}
+            style={{
+              backgroundColor: proj.color,
+              transform: `rotate(${proj.rotation}deg)`,
+              zIndex: projects.length - idx
+            }}
           >
-            <div className={styles.browserWindow}>
-              <div className={styles.browserTopBar}>
-                <div className={styles.trafficLights}>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#ff5f57' }}></span>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#ffbd2e' }}></span>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#28ca42' }}></span>
-                </div>
+            <div className={styles.noteHeader}>
+              <h3 className={styles.noteTitle}>{proj.name}</h3>
+            </div>
+            <div className={styles.projectImageWrapper}>
+              <img
+                src={proj.image}
+                alt={proj.name}
+                className={styles.projectImg}
+              />
+            </div>
+            <div className={styles.noteContent}>
+              <p className={styles.projectDesc}>{proj.desc}</p>
+              <div className={styles.projectSkills}>
+                {proj.skills.map((skill, skillIdx) => (
+                  <div key={skillIdx} className={styles.skillItem}>
+                    • {skill}
+                  </div>
+                ))}
               </div>
-              <div className={styles.browserContent}>
-                <div className={styles.projectImageWrapper}>
-                  <img
-                    src={proj.image}
-                    alt={proj.name}
-                    className={styles.projectImg}
-                  />
-                </div>
-                <div className={styles.projectContent}>
-                  <h3>{proj.name}</h3>
-                  <p className={styles.projectDesc}>{proj.desc}</p>
-                  <ul className={styles.projectSkills}>
-                    {proj.skills.map((skill, skillIdx) => (
-                      <li key={skillIdx}>{skill}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            </div>
+            <div className={styles.noteFooter}>
+              <span className={styles.noteHint}>Click to view project</span>
             </div>
           </a>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

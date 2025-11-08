@@ -5,32 +5,32 @@ const skillCategories = [
   {
     title: 'Programming & Data Analysis',
     skills: ['Python', 'R', 'SQL', 'Pandas', 'Numpy', 'Statsmodels'],
-    windowColor: '#a8e6cf', // Light teal
-    topBarColor: '#ffd3b6' // Light peach
+    windowColor: '#1E93AB', // Teal
+    topBarColor: '#0D92F4' // Blue
   },
   {
     title: 'Machine Learning & AI',
     skills: ['Scikit-Learn', 'XGBoost', 'TensorFlow', 'Keras', 'LangChain', 'Hugging Face', 'MLflow'],
-    windowColor: '#ffaaa5', // Light pink
-    topBarColor: '#ffd3a5' // Light orange
+    windowColor: '#E62727', // Red
+    topBarColor: '#C62E2E' // Dark red
   },
   {
     title: 'Data Visualization & Notebooks',
     skills: ['Matplotlib', 'Seaborn', 'Plotly', 'Jupyter', 'Google Colab'],
-    windowColor: '#c7ceea', // Light purple
-    topBarColor: '#ffd3b6' // Light peach
+    windowColor: '#77CDFF', // Light blue
+    topBarColor: '#0D92F4' // Blue
   },
   {
     title: 'Cloud, Deployment & Tools',
     skills: ['BigQuery', 'Google Compute', 'Cloud Storage', 'Git', 'Docker', 'FastAPI', 'Prefect', 'Streamlit'],
-    windowColor: '#a8d8ea', // Light blue
-    topBarColor: '#ffaaa5' // Light pink
+    windowColor: '#F95454', // Light red
+    topBarColor: '#E62727' // Red
   },
   {
     title: 'Soft Skills',
     skills: ['Analytical thinking', 'Problem-solving', 'Adaptability', 'Project management', 'Communication', 'Collaboration'],
-    windowColor: '#ffd3a5', // Light yellow/orange
-    topBarColor: '#c7ceea' // Light purple
+    windowColor: '#F3F2EC', // Cream
+    topBarColor: '#DCDCDC' // Light gray
   }
 ];
 
@@ -51,9 +51,9 @@ export default function SkillsSection() {
             <div className={styles.retroWindow}>
               <div className={styles.windowTopBar}>
                 <div className={styles.trafficLights}>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#ff5f57' }}></span>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#ffbd2e' }}></span>
-                  <span className={styles.trafficLight} style={{ backgroundColor: '#28ca42' }}></span>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#E62727' }}></span>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#0D92F4' }}></span>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#1E93AB' }}></span>
                 </div>
                 <h3 className={styles.categoryTitle}>{category.title}</h3>
               </div>

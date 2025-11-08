@@ -42,34 +42,54 @@ export default function Sidebar() {
       <div className={styles.sidebarBio}>
         Data Scientist | ML Engineer
       </div>
-      <div className={styles.aboutSection}>
-        <h3 className={styles.aboutHeading}>About Me</h3>
-        <p className={styles.aboutText}>
-          Passionate about AI and data science, with experience in machine learning and deep learning. My time in China strengthened my communication, adaptability, and teamwork skills. My goal is to work with collaborative, driven, and innovative people, apply and grow my skills, and build intelligent systems that make real-world impact.
-        </p>
-      </div>
       <div className={styles.socials}>
-        <a href="https://github.com/your-username" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-        <a href="https://linkedin.com/in/your-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        <a href="https://www.codewars.com/users/your-username" aria-label="Codewars" target="_blank" rel="noopener noreferrer"><img src={`${basePath}/codewars2.svg`} alt="Codewars" width="22" height="22" style={{display:'block'}} /></a>
-        <a href="https://www.kaggle.com/your-username" aria-label="Kaggle" target="_blank" rel="noopener noreferrer"><img src={`${basePath}/kaggle1.svg`} alt="Kaggle" width="22" height="22" style={{display:'block'}} /></a>
+        <div className={styles.retroWindow}>
+          <div className={styles.windowTopBar}>
+            <div className={styles.trafficLights}>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+            </div>
+            <h3 className={styles.windowTitle}>Social Links</h3>
+          </div>
+          <div className={styles.windowContent}>
+            <div className={styles.socialsList}>
+              <a href="https://github.com/eljamani94" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/aymen-eljamani/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+              <a href="https://www.codewars.com/users/zerowaymen" aria-label="Codewars" target="_blank" rel="noopener noreferrer"><img src={`${basePath}/icons8-codewars-48.png`} alt="Codewars" width="22" height="22" style={{display:'block'}} /></a>
+              <a href="https://www.kaggle.com/aymeneljamani" aria-label="Kaggle" target="_blank" rel="noopener noreferrer"><img src={`${basePath}/icons8-kaggle-48.png`} alt="Kaggle" width="22" height="22" style={{display:'block'}} /></a>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={styles.contactInfo}>
-        <div className={styles.contactRow}>
+        <div className={styles.retroWindow}>
+          <div className={styles.windowTopBar}>
+            <div className={styles.trafficLights}>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+              <span className={styles.trafficLight}></span>
+            </div>
+            <h3 className={styles.windowTitle}>Contact</h3>
+          </div>
+          <div className={styles.windowContent}>
+            <div className={styles.contactRow}>
           <span className={styles.contactIcon}><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></span>
-          <a href="mailto:eljamani.aej@gmai.com" className={styles.contactText}>eljamani.aej@gmail.com</a>
+          <a href="mailto:eljamani.aej@gmail.com" className={styles.contactText}>eljamani.aej@gmail.com</a>
         </div>
         <div className={styles.contactRow}>
           <span className={styles.contactIcon}><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55.57 1 1 0 011 1v3.61a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.61a1 1 0 011 1 11.36 11.36 0 00.57 3.55 1 1 0 01-.21 1.11z"/></svg></span>
           <span className={styles.contactText}>+212 773 567 766</span>
         </div>
         <div className={styles.contactRow}>
-          <span className={styles.contactIcon}><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" font-size="10" fill="#fff">W</text></svg></span>
+          <span className={styles.contactIcon}><img src={`${basePath}/icons8-wechat-50.png`} alt="WeChat" width="18" height="18" style={{display:'block'}} /></span>
           <span className={styles.contactText}>WeChat: zeroa94</span>
         </div>
         <div className={styles.contactRow}>
           <span className={styles.contactIcon}><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
           <span className={styles.contactText}>Casablanca, Morocco</span>
+        </div>
+          </div>
         </div>
       </div>
       <button 

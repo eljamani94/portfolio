@@ -2,8 +2,12 @@
   margin-left: 320px;
   flex: 1;
   padding: 48px 48px 48px 48px;
-  background: #f2f1ec;
-  color: #333333;
+  background: #FFFFFF;
+  background-image: 
+    linear-gradient(rgba(13, 74, 188, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 74, 188, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #010169;
   min-height: 100vh;
   transition: background 0.2s, margin-left 0.3s ease;
   overflow-y: auto;
@@ -57,12 +61,12 @@
 .sectionWrapper.experience,
 .sectionWrapper.education,
 .sectionWrapper.projects {
-  border-top: 2px solid #e5e7eb;
+  border-top: none;
   padding-top: 0;
 }
 
 .sectionWrapper.certifications {
-  border-top: 2px solid #e5e7eb;
+  border-top: none;
   padding-top: 0;
 }
 
@@ -79,7 +83,7 @@
 }
 
 .educationCertifications {
-  border-top: 2px solid #e5e7eb;
+  border-top: none;
   padding-top: 0;
 }
 

@@ -14,44 +14,55 @@ const experiences = [
       'Applied observational and analytical skills to adapt activities based on each child\'s development.',
       'Strengthened communication and storytelling abilities by explaining concepts clearly to parents and learners',
     ],
+    windowColor: '#1E93AB', // Teal
+    topBarColor: '#0D92F4' // Blue
   },
 ];
 
 export default function ExperienceSection() {
   return (
-    <section className={styles.experience}>
-      <h2 className={styles.heading}>Other Experience</h2>
-      <div className={styles.comicPage}>
-        <div className={styles.comicHeader}>
-          <div className={styles.headerBanner}>
-            <span className={styles.bannerText}>EXPERIENCE</span>
-          </div>
-        </div>
-        <div className={styles.comicContent}>
-          {experiences.map((exp, index) => (
-            <div key={exp.company + index} className={styles.comicCard}>
-              <div className={styles.cardHeader}>
-                <h3 className={styles.cardTitle}>
+    <section className={styles.experienceSection}>
+      <h2 className={styles.heading}>Experience</h2>
+      <div className={styles.experienceGrid}>
+        {experiences.map((exp, index) => (
+          <div 
+            key={exp.company + index} 
+            className={styles.experienceCategory}
+            style={{
+              '--window-color': exp.windowColor,
+              '--topbar-color': exp.topBarColor
+            }}
+          >
+            <div className={styles.retroWindow}>
+              <div className={styles.windowTopBar}>
+                <div className={styles.trafficLights}>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#E62727' }}></span>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#0D92F4' }}></span>
+                  <span className={styles.trafficLight} style={{ backgroundColor: '#1E93AB' }}></span>
+                </div>
+                <h3 className={styles.windowTitle}>
                   {exp.title}
                   {exp.ageRange && <span className={styles.ageRange}> {exp.ageRange}</span>}
                 </h3>
-                <div className={styles.cardSubtitle}>{exp.company}</div>
               </div>
-              <div className={styles.cardMeta}>
-                <span className={styles.metaItem}>📅 {exp.period}</span>
-                <span className={styles.metaItem}>📍 {exp.location}</span>
-              </div>
-              <div className={styles.cardBody}>
-                {exp.description.map((item, idx) => (
-                  <div key={idx} className={styles.descriptionItem}>
-                    <span className={styles.bullet}>•</span>
-                    <span className={styles.descriptionText}>{item}</span>
-                  </div>
-                ))}
+              <div className={styles.windowContent}>
+                <div className={styles.companyName}>{exp.company}</div>
+                <div className={styles.metaInfo}>
+                  <span className={styles.metaItem}>📅 {exp.period}</span>
+                  <span className={styles.metaItem}>📍 {exp.location}</span>
+                </div>
+                <div className={styles.descriptionList}>
+                  {exp.description.map((item, idx) => (
+                    <div key={idx} className={styles.descriptionItem}>
+                      <span className={styles.bullet}>•</span>
+                      <span className={styles.descriptionText}>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
