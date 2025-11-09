@@ -32,7 +32,7 @@ const projects = [
   {
     name: 'House Prices Prediction - Kaggle Competition',
     image: `${basePath}/project3.png`,
-    desc: 'Advanced regression pipeline achieving RMSE of 0.12336 - Top 15% solution',
+    desc: 'Advanced regression pipeline achieving RMSE of 0.12336 - Top 10% solution',
     skills: [
       'Built end-to-end regression pipeline with comprehensive EDA and feature engineering.',
       'Implemented ensemble methods combining Gradient Boosting and Random Forest models.',
