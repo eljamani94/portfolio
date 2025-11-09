@@ -14,8 +14,21 @@ const experiences = [
       'Applied observational and analytical skills to adapt activities based on each child\'s development.',
       'Strengthened communication and storytelling abilities by explaining concepts clearly to parents and learners',
     ],
-    windowColor: '#1E93AB', // Teal
-    topBarColor: '#0D92F4' // Blue
+    windowColor: '#1698C7', // Teal
+    topBarColor: '#1EA3F5' // Blue
+  },
+  {
+    title: 'Web Developer Intern',
+    company: 'PLATI MAROC',
+    period: '05/2020 - 10/2020',
+    location: 'Mohammedia, Morocco (Remote)',
+    description: [
+      'Participated in the design and development of a web application for CV management and recruitment.',
+      'Created the user interface using HTML, CSS, JavaScript and back-end development with ASP.NET / C#.',
+      'Set up the database and CRUD operations using SQL Server.',
+    ],
+    windowColor: '#1698C7', // Teal (similar to #1E93AB)
+    topBarColor: '#1EA3F5' // Blue (similar to #0D92F4)
   },
 ];
 
