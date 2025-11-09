@@ -4,7 +4,7 @@ import styles from './SkillsSection.module.css';
 const skillCategories = [
   {
     title: 'Programming & Data Analysis',
-    skills: ['Python', 'R', 'SQL', 'Pandas', 'Numpy', 'Statsmodels'],
+    skills: ['Python', 'R', 'SQL', 'Pandas', 'Numpy', 'Statsmodels', 'Power BI'],
     windowColor: '#1E93AB', // Teal
     topBarColor: '#0D92F4' // Blue
   },
@@ -16,7 +16,7 @@ const skillCategories = [
   },
   {
     title: 'Data Visualization & Notebooks',
-    skills: ['Matplotlib', 'Seaborn', 'Plotly', 'Jupyter', 'Google Colab'],
+    skills: ['Tableau', 'Matplotlib', 'Seaborn', 'Plotly', 'Jupyter', 'Google Colab'],
     windowColor: '#77CDFF', // Light blue
     topBarColor: '#0D92F4' // Blue
   },
