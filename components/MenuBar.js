@@ -76,7 +76,7 @@ export default function MenuBar() {
             </li>
           ))}
           <li className={styles.downloadBtn} title="Download Resume">
-            <a href={`${basePath}/resume_french.pdf`} download="resume_french.pdf" style={{display:'flex',alignItems:'center',justifyContent:'center',color:'inherit',textDecoration:'none'}}>
+            <a href={`${basePath}/en_resume.pdf`} download="en_resume.pdf" style={{display:'flex',alignItems:'center',justifyContent:'center',color:'inherit',textDecoration:'none'}}>
               <FaDownload />
             </a>
             <div className={styles.arrowText}>DOWNLOAD RESUME</div>
