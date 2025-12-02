@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './ProjectsSection.module.css';
 
 const basePath = process.env.NODE_ENV === 'production' ? '/portfolio' : '';
@@ -43,26 +46,42 @@ const projects = [
     rotation: -2
   },
   {
-    name: 'Cyclistic Bike Share Analysis',
+    name: 'FieldVision - Cotton Weed Detection',
     image: `${basePath}/project4.png`,
+    desc: 'A production-ready MLOps system for real-time weed detection in cotton fields using YOLOv8',
+    skills: [
+      'Built end-to-end MLOps architecture with microservices separation (FastAPI backend, Streamlit frontend) from scratch.',
+      'Implemented custom model integration pipeline with YOLOv8, real-time inference API, and visual annotation generation.',
+      'Developed cloud deployment infrastructure with Docker containerization and multi-cloud architecture (GCP + Streamlit Cloud).',
+    ],
+    link: 'https://github.com/eljamani94/cotton-weed-detection',
+    color: '#F95454', // Light red
+    rotation: 1
+  },
+  {
+    name: 'Cyclistic Bike Share Analysis',
+    image: `${basePath}/project5.png`,
     desc: 'Complete data analysis comparing casual riders vs annual members',
     skills: [
       'Performed comprehensive data cleaning and exploratory analysis of bike-share usage patterns using R.',
       'Created visualizations to identify usage trends and behavioral differences between user types.',
       'Delivered actionable business recommendations for membership conversion strategy.',
     ],
-    link: 'https://github.com/eljamani94/house-prices-prediction',
+    link: 'https://github.com/eljamani94/cyclistic-bike-share',
     color: '#F95454', // Light red
-    rotation: 1
+    rotation: 1.5
   },
 ];
 
 export default function ProjectsSection() {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section className={styles.projectsSection}>
       <h2 className={styles.heading}>Projects</h2>
       <div className={styles.stickyNotesContainer}>
-        {projects.map((proj, idx) => (
+        {displayedProjects.map((proj, idx) => (
           <a
             key={proj.name}
             href={proj.link}
@@ -101,6 +120,16 @@ export default function ProjectsSection() {
           </a>
         ))}
       </div>
+      {!showAll && projects.length > 4 && (
+        <div className={styles.showMoreContainer}>
+          <button 
+            className={styles.showMoreButton}
+            onClick={() => setShowAll(true)}
+          >
+            Show More
+          </button>
+        </div>
+      )}
     </section>
   );
 }
