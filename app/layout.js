@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Aymen Portfolio',
-  description: 'A modern software engineer portfolio inspired by Sawad template',
+  description: 'Data Scientist | Machine Learning Engineer | AI Enthusiast | Transforming data into actionable insights and building intelligent solutions to real-world problems',
 };
 
 export default function RootLayout({ children }) {
